@@ -1044,7 +1044,7 @@
         condition: notes
     };
 
-    const { data, error } = await supabase.from('Cars').insert([newCar]);
+    const { data, error } = await supabaseClient.from('Cars').insert([...]);
 
     if (error) {
         alert('Error submitting vehicle: ' + error.message);
@@ -1066,7 +1066,7 @@
 <script>
     const supabaseUrl ='https://dwhabztmqaxmxamwzifa.supabase.co';
     const supabaseKey = 'sb_publishable_0QclRr-HrKmzBcgYjvwvlA_YOFYpxra';
-    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+    const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
     console.log("Supabase connected!");
 </script>
