@@ -1209,7 +1209,117 @@ function updateAuthUI(session) {
 // Tell the website to run this function immediately when the page loads
 loadCars();   
 
- 
+ function openAuthModal() {
+    supabaseClient.auth.getSession().then(({ data: { session } }) => {
+        if (!session) {
+            document.getElementById('auth-modal').classList.remove('hidden');
+        } else {
+            // Already logged in, scroll down to the form
+            document.querySelector('form')?.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+}
+
+function closeAuthModal() {
+    document.getElementById('auth-modal').classList.add('hidden');
+}
+
+async function handleSignUp() {
+    const email = document.getElementById('auth-email').value;
+    const password = document.getElementById('auth-password').value;
+
+    const { data, error } = await supabaseClient.auth.signUp({ email, password });
+    if (error) {
+        alert("Sign Up Error: " + error.message);
+        return;
+    }
+    alert("Account created! You can now sign in.");
+}
+
+async function handleSignIn() {
+    const email = document.getElementById('auth-email').value;
+    const password = document.getElementById('auth-password').value;
+
+    const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+    if (error) {
+        alert("Sign In Error: " + error.message);
+        return;
+    }
+}
+
+async function handleSignOut() {
+    await supabaseClient.auth.signOut();
+}
+
+supabaseClient.auth.onAuthStateChange((event, session) => {
+    updateAuthUI(session);
+});
+
+function updateAuthUI(session) {
+    const authInputs = document.getElementById('auth-form-inputs');
+    const userInfo = document.getElementById('auth-user-info');
+    const authTitle = document.getElementById('auth-title');
+    const authSubtitle = document.getElementById('auth-subtitle');
+    const carForm = document.querySelector('form');
+
+    if (session) {
+        if (authInputs) authInputs.classList.add('hidden');
+        if (userInfo) userInfo.classList.remove('hidden');
+        if (authTitle) authTitle.innerText = "Welcome, " + session.user.email;
+        if (authSubtitle) authSubtitle.innerText = "You are logged in and ready to list!";
+        if (carForm) {
+            carForm.style.opacity = "1";
+            carForm.style.pointerEvents = "auto";
+        }
+        setTimeout(() => closeAuthModal(), 1500);
+    } else {
+        if (authInputs) authInputs.classList.remove('hidden');
+        if (userInfo) userInfo.classList.add('hidden');
+        if (authTitle) authTitle.innerText = "Account Required";
+        if (authSubtitle) authSubtitle.innerText = "Please sign in or create an account to list your car.";
+        if (carForm) {
+            carForm.style.opacity = "0.3";
+            carForm.style.pointerEvents = "none";
+        }
+    }
+}
+
+// Check session on page load
+supabaseClient.auth.getSession().then(({ data: { session } }) => {
+    updateAuthUI(session);
+});
 </script>
+<!-- Sign In / Sign Up Modal -->
+<div id="auth-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+    <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl max-w-xl w-full relative">
+        <!-- Close Button -->
+        <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white font-bold text-xl">✕</button>
+        
+        <h3 id="auth-title" class="text-xl font-bold text-white mb-2">Account Required</h3>
+        <p id="auth-subtitle" class="text-gray-400 text-sm mb-4">Please sign in or create an account to list your car.</p>
+        
+        <div id="auth-form-inputs" class="space-y-3">
+            <input type="email" id="auth-email" placeholder="Email Address" class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white">
+            <input type="password" id="auth-password" placeholder="Password (min 6 characters)" class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white">
+            
+            <div class="flex gap-3 pt-2">
+                <button onclick="handleSignIn()" class="flex-1 bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 rounded-lg transition-colors">
+                    Sign In
+                </button>
+                <button onclick="handleSignUp()" class="flex-1 bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg transition-colors">
+                    Sign Up
+                </button>
+            </div>
+        </div>
+
+        <!-- Shown when user is successfully logged in -->
+        <div id="auth-user-info" class="hidden text-center">
+            <p class="text-green-400 font-semibold mb-3">Logged in successfully! ✅</p>
+            <button onclick="handleSignOut()" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg text-sm transition-colors">
+                Sign Out
+            </button>
+        </div>
+    </div>
+</div> 
 </body>
 </html>
