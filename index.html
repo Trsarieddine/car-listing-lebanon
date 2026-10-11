@@ -23,7 +23,7 @@
                         brand: {
                             50: '#fffbeb',
                             100: '#fef3c7',
-                            500: '#f59e0b', // Luxury Gold Accent
+                            500: '#f59e0b',
                             600: '#d97706',
                             700: '#b45309',
                             accent: '#eab308',
@@ -39,12 +39,14 @@
 
     <!-- Custom Styles -->
     <style>
-       body {
-            background: linear-gradient(145deg, #0d1116 0%, #020305 100%);
-            background-color: #020305;
+        body {
+            background: 
+                linear-gradient(180deg, rgba(5, 7, 10, 0.95) 0%, rgba(9, 13, 22, 0.92) 50%, rgba(2, 3, 5, 0.97) 100%), 
+                url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1920&q=80') no-repeat center top;
+            background-size: cover;
+            background-attachment: fixed;
             color: #f3f4f6;
             min-height: 100vh;
-            background-attachment: fixed;
         }
         .glass-panel {
             background: rgba(15, 23, 42, 0.85);
@@ -53,7 +55,8 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
         .glass-card {
-            background: #0f172a;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.07);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -86,12 +89,6 @@
 
 <body class="antialiased min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-black">
 
-    <!-- Ambient Background Lighting Effect -->
-    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[140px]"></div>
-        <div class="absolute top-1/3 -right-40 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[160px]"></div>
-    </div>
-
     <!-- Header Navigation -->
     <header class="sticky top-0 z-50 glass-panel border-b border-gray-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
@@ -118,8 +115,8 @@
                     <p class="text-xs text-gray-400">Direct Support</p>
                     <p class="text-sm font-bold text-emerald-400"><i class="fa-brands fa-whatsapp"></i> +961 71 911 372</p>
                 </div>
-                <a href="https://wa.me/96171911372?text=Hi,%20I%20want%20to%20list%20my%20car%20on%20Car%20Listing%20Lebanon." target="_blank" class="px-5 py-2.5 rounded-xl font-bold text-black bg-brand-500 hover:bg-brand-400 transition-all shadow-lg shadow-brand-500/20 flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-lg"></i> List Your Car
+                <a href="#list-your-car" class="px-5 py-2.5 rounded-xl font-bold text-black bg-brand-500 hover:bg-brand-400 transition-all shadow-lg shadow-brand-500/20 flex items-center gap-2">
+                    <i class="fa-solid fa-plus"></i> List Your Car
                 </a>
             </div>
         </div>
@@ -140,7 +137,7 @@
                     Sell Your Vehicle in Lebanon — <span class="text-gradient">Fast, Safe & Effortless</span>
                 </h1>
                 <p class="text-lg sm:text-xl text-gray-400 leading-relaxed font-normal">
-                    Browse verified vehicles or send us your car details via WhatsApp to get featured on our platform & Instagram!
+                    Fill out the form below with your car details to send them instantly to our WhatsApp team for publication!
                 </p>
             </div>
         </div>
@@ -158,7 +155,7 @@
                 <span class="text-xs font-semibold px-3 py-1 rounded-full bg-gray-800 text-gray-300">Verified Showroom</span>
             </div>
 
-            <!-- Car Grid (Only You Manage These) -->
+            <!-- Car Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <!-- Car Card 1 -->
@@ -177,7 +174,7 @@
                             </div>
                         </div>
                         <div class="pt-2">
-                            <a href="https://wa.me/96171911372?text=Hi,%20I%20am%20interested%20in%20the%20Mercedes-Benz%20C300%20AMG%20($28,500)%20listed%20on%20Car%20Listing%20Lebanon." target="_blank" class="w-full py-2.5 rounded-xl font-bold text-black bg-brand-500 hover:bg-brand-400 text-center transition-all flex items-center justify-center gap-2 text-sm shadow-md">
+                            <a href="https://wa.me/96171911372?text=Hi,%20I%20am%20interested%20in%20the%20Mercedes-Benz%20C300%20AMG%20listed%20on%20Car%20Listing%20Lebanon." target="_blank" class="w-full py-2.5 rounded-xl font-bold text-black bg-brand-500 hover:bg-brand-400 text-center transition-all flex items-center justify-center gap-2 text-sm shadow-md">
                                 <i class="fa-brands fa-whatsapp text-base"></i> Inquire via WhatsApp
                             </a>
                         </div>
@@ -200,7 +197,7 @@
                             </div>
                         </div>
                         <div class="pt-2">
-                            <a href="https://wa.me/96171911372?text=Hi,%20I%20am%20interested%20in%20the%20Porsche%20Macan%20S%20($44,000)%20listed%20on%20Car%20Listing%20Lebanon." target="_blank" class="w-full py-2.5 rounded-xl font-bold text-black bg-brand-500 hover:bg-brand-400 text-center transition-all flex items-center justify-center gap-2 text-sm shadow-md">
+                            <a href="https://wa.me/96171911372?text=Hi,%20I%20am%20interested%20in%20the%20Porsche%20Macan%20S%20listed%20on%20Car%20Listing%20Lebanon." target="_blank" class="w-full py-2.5 rounded-xl font-bold text-black bg-brand-500 hover:bg-brand-400 text-center transition-all flex items-center justify-center gap-2 text-sm shadow-md">
                                 <i class="fa-brands fa-whatsapp text-base"></i> Inquire via WhatsApp
                             </a>
                         </div>
@@ -210,20 +207,56 @@
             </div>
         </section>
 
-        <!-- List Your Car Call-to-Action Section -->
-        <section id="list-your-car" class="max-w-2xl mx-auto glass-panel p-8 sm:p-12 rounded-3xl shadow-2xl border border-gray-800 text-center space-y-6">
-            <div class="w-16 h-16 rounded-2xl bg-brand-500/10 border border-brand-500/30 text-brand-400 text-2xl flex items-center justify-center mx-auto">
-                <i class="fa-solid fa-car-on"></i>
+        <!-- List Your Car Form Section -->
+        <section id="list-your-car" class="max-w-3xl mx-auto glass-panel p-6 sm:p-10 rounded-3xl shadow-2xl border border-gray-800">
+            <div class="text-center space-y-2 mb-8">
+                <h2 class="text-3xl font-extrabold text-white">List Your Car</h2>
+                <p class="text-gray-400 text-sm">Fill in your car's details below. Submitting will instantly open WhatsApp to send it to us!</p>
             </div>
-            <div class="space-y-2">
-                <h2 class="text-3xl font-extrabold text-white">Want to List Your Car?</h2>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    We handle everything for you! Send us your car photos, model, price, and mileage directly on WhatsApp, and we will publish it on our website and Instagram page.
-                </p>
-            </div>
-            <a href="https://wa.me/96171911372?text=Hi,%20I%20have%20a%20car%20I%20want%20to%20list%20opn%20Car%20Listing%20Lebanon. Here are the details:" target="_blank" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-black bg-brand-500 hover:bg-brand-400 transition-all shadow-xl shadow-brand-500/20 text-base">
-                <i class="fa-brands fa-whatsapp text-xl"></i> Send Car Details on WhatsApp
-            </a>
+
+            <form id="car-form" class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Car Model / Title</label>
+                        <input type="text" id="car-title" required placeholder="e.g. BMW 428i M-Sport" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Price ($ USD)</label>
+                        <input type="number" id="car-price" required placeholder="e.g. 18500" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500 transition-colors">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Mileage (KM Driven)</label>
+                        <input type="text" id="car-km" required placeholder="e.g. 75,000 km" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Year</label>
+                        <input type="number" id="car-year" required placeholder="e.g. 2018" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500 transition-colors">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Car Image URL</label>
+                    <input type="url" id="car-image" required placeholder="Paste direct image link (e.g. Unsplash URL)" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500 transition-colors">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Your Name</label>
+                        <input type="text" id="car-seller" required placeholder="e.g. Karim S." class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Your Phone Number</label>
+                        <input type="text" id="car-phone" required placeholder="e.g. +961 70 123 456" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500 transition-colors">
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full py-4 rounded-xl font-bold text-black bg-brand-500 hover:bg-brand-400 transition-all shadow-lg shadow-brand-500/20 flex items-center justify-center gap-2 cursor-pointer text-base">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Send Car Details to WhatsApp
+                </button>
+            </form>
         </section>
     </main>
 
@@ -239,6 +272,27 @@
             <p class="text-xs text-gray-500">© 2026 Car Listing Lebanon. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- JavaScript to Handle Form Submission & WhatsApp Redirection -->
+    <script>
+        document.getElementById('car-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const title = document.getElementById('car-title').value;
+            const price = document.getElementById('car-price').value;
+            const km = document.getElementById('car-km').value;
+            const year = document.getElementById('car-year').value;
+            const image = document.getElementById('car-image').value;
+            const seller = document.getElementById('car-seller').value;
+            const phone = document.getElementById('car-phone').value;
+
+            // Format message for WhatsApp
+            const message = `Hello Car Listing Lebanon,%0A%0AI want to list my car:%0A🚗 *Model:* ${encodeURIComponent(title)}%0A💵 *Price:* $${encodeURIComponent(price)}%0A⏱️ *Mileage:* ${encodeURIComponent(km)}%0A📅 *Year:* ${encodeURIComponent(year)}%0A🖼️ *Image URL:* ${encodeURIComponent(image)}%0A👤 *Name:* ${encodeURIComponent(seller)}%0A📞 *Phone:* ${encodeURIComponent(phone)}`;
+
+            // Open WhatsApp with number +961 71 911 372
+            window.open(`https://wa.me/96171911372?text=${message}`, '_blank');
+        });
+    </script>
 
 </body>
 </html>
