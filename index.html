@@ -105,7 +105,7 @@
             <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
                 <a href="#inventory" class="hover:text-brand-400 transition-colors">Browse Cars</a>
                 <a href="#list-your-car" class="hover:text-brand-400 transition-colors">List Your Car</a>
-                <a href="https://www.instagram.com/carlistinglebanon" target="_blank" class="text-pink-400 hover:text-pink-300 transition-colors flex items-center gap-1.5">
+                <a href="https://instagram.com/carlistinglebanon" target="_blank" class="text-pink-400 hover:text-pink-300 transition-colors flex items-center gap-1.5">
                     <i class="fa-brands fa-instagram text-base"></i> @carlistinglebanon
                 </a>
             </nav>
@@ -198,9 +198,9 @@
                 </div>
 
                 <div>
-                    <!-- Updated to Optional -->
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Car Image URL (Optional)</label>
-                    <input type="url" id="car-image" placeholder="Paste direct image link or leave blank" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500 transition-colors">
+                    <!-- UPDATED TO FILE UPLOAD -->
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Car Photo (Upload)</label>
+                    <input type="file" id="car-image" accept="image/*" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-gray-400 focus:outline-none focus:border-brand-500 transition-colors file:mr-4 file:py-2.5 file:px-6 file:rounded-lg file:border-0 file:text-sm file:font-bold file:bg-gray-800 file:text-white hover:file:bg-gray-700 file:cursor-pointer cursor-pointer">
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -234,7 +234,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript to Handle Form Submission & WhatsApp Redirection -->
+    <!-- JavaScript to Handle File Upload & WhatsApp Redirection -->
     <script>
         document.getElementById('car-form').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -245,6 +245,68 @@
             const year = document.getElementById('car-year').value;
             const seller = document.getElementById('car-seller').value;
             const phone = document.getElementById('car-phone').value;
-            
-            // Handle Optional Image
-            let imageRaw = document.getElementById('car-image').value.trim();
+            const fileInput = document.getElementById('car-image');
+
+            // 1. Hide Empty State
+            const emptyState = document.getElementById('empty-state');
+            if(emptyState) {
+                emptyState.style.display = 'none';
+            }
+
+            // Function to build and append card
+            const createCardAndRedirect = (imageSrc) => {
+                const grid = document.getElementById('cars-grid');
+                const card = document.createElement('div');
+                card.className = 'glass-card rounded-2xl overflow-hidden flex flex-col justify-between shadow-xl';
+                card.innerHTML = `
+                    <div class="relative h-52 overflow-hidden bg-gray-900">
+                        <img src="${imageSrc}" alt="${title}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80'">
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-lg bg-black/70 backdrop-blur-md text-brand-400 font-bold text-xs border border-white/10">${year}</span>
+                    </div>
+                    <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-1">${title}</h3>
+                            <div class="text-2xl font-extrabold text-brand-400 mb-3">$${Number(price).toLocaleString()}</div>
+                            <div class="flex items-center gap-4 text-xs text-gray-400 border-t border-gray-800/80 pt-3">
+                                <span><i class="fa-solid fa-gauge text-brand-500 mr-1"></i> ${km}</span>
+                                <span><i class="fa-solid fa-user text-brand-500 mr-1"></i> ${seller}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                // Insert it at the top of the grid
+                grid.prepend(card);
+
+                // 3. Format message for WhatsApp
+                const message = `Hello Car Listing Lebanon,%0A%0AI want to list my car:%0A🚗 *Model:* ${encodeURIComponent(title)}%0A💵 *Price:* $${encodeURIComponent(price)}%0A⏱️ *Mileage:* ${encodeURIComponent(km)}%0A📅 *Year:* ${encodeURIComponent(year)}%0A🖼️ *Image:* I will attach the car photos in this chat!%0A👤 *Name:* ${encodeURIComponent(seller)}%0A📞 *Phone:* ${encodeURIComponent(phone)}`;
+
+                // Reset form
+                document.getElementById('car-form').reset();
+                
+                // Scroll user back up to see their new card
+                window.location.hash = 'inventory';
+
+                // 4. Open WhatsApp
+                setTimeout(() => {
+                    window.open(`https://wa.me/96171911372?text=${message}`, '_blank');
+                }, 500);
+            };
+
+            // Process image file if uploaded
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    // Create card using the uploaded image
+                    createCardAndRedirect(e.target.result);
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                // Fallback placeholder if no image is uploaded
+                createCardAndRedirect('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80');
+            }
+        });
+    </script>
+
+</body>
+</html>
