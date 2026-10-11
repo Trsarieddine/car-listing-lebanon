@@ -1,90 +1,65 @@
-
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Listing Lebanon | Buy & Sell Cars in Lebanon</title>
-    <meta name="google-site-verification" content="Gl3PId_-OFC97Ut08AzVor2D2vdAb6cMzBLBuDhVQhc" />
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
                     },
-              colors: {
-                brand: {
-                    50: '#fffbeb',
-                    100: '#fef3c7',
-                    500: '#f59e0b', // Luxury Gold Accent
-                    600: '#d97706',
-                    700: '#b45309',
-                    accent: '#eab308',
-                    dark: '#080c14',
-                    card: '#111827',
-                    border: '#1f2937'
+                    colors: {
+                        brand: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            500: '#f59e0b', // Luxury Gold Accent
+                            600: '#d97706',
+                            700: '#b45309',
+                            accent: '#eab308',
+                            dark: '#080c14',
+                            card: '#111827',
+                            border: '#1f2937'
+                        }
+                    }
                 }
             }
         }
-    }
-</script>
+    </script>
 
-<!-- Custom Styles -->
-</script>
-
-<!-- Ambient Background Lighting Effect -->
-<div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-    <div class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[140px]"></div>
-    <div class="absolute top-1/3 -right-40 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[160px]"></div>
-</div>
-
-<!-- Custom Styles -->
-<style>
-    body {
-        background: linear-gradient(180deg, #111827 0%, #080c14 100%);
-        background-color: #080c14;
-        color: #f3f4f6;
-        min-height: 100vh;
-    }
-    .glass-panel {
-        background: rgba(17, 24, 39, 0.85);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .glass-card {
-        background: #111827;
-        border: 1px solid rgba(255, 255, 255, 0.07);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .glass-card:hover {
-        border-color: rgba(245, 158, 11, 0.3);
-        transform: translateY(-2px);
-    }
-</style>
-</head>
-
-<body class="antialiased min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-black">
-        background: rgba(17, 24, 39, 0.85);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .glass-card {
-        background: #111827;
-        border: 1px solid rgba(255, 255, 255, 0.07);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .glass-card:hover {
-        border-color: rgba(245, 158, 11, 0.3);
-        transform: translateY(-2px);
-    }
-</style>
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background: linear-gradient(180deg, #111827 0%, #080c14 100%);
+            background-color: #080c14;
+            color: #f3f4f6;
+            min-height: 100vh;
+        }
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: #111827;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(245, 158, 11, 0.3);
+            transform: translateY(-2px);
+        }
         .text-gradient {
             background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #ffffff 100%);
             background-clip: text;
@@ -106,1240 +81,92 @@
         }
     </style>
 </head>
+
 <body class="antialiased min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-black">
 
-    <!-- Header / Navbar -->
-    <header class="sticky top-0 z-40 glass-panel border-b border-gray-800/80">
+    <!-- Ambient Background Lighting Effect -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[140px]"></div>
+        <div class="absolute top-1/3 -right-40 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[160px]"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-gray-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Logo -->
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-accent flex items-center justify-center text-black font-black text-xl shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-car-side"></i>
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-black font-extrabold shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-car text-xl"></i>
                 </div>
                 <div>
-                    <span class="text-xl font-extrabold tracking-tight text-white block leading-none">CAR LISTING</span>
-                    <span class="text-xs font-semibold tracking-widest text-brand-500 uppercase">LEBANON</span>
+                    <span class="text-lg font-extrabold tracking-wider text-white block leading-none">CAR LISTING</span>
+                    <span class="text-xs font-bold text-brand-400 tracking-widest">LEBANON</span>
                 </div>
             </a>
 
-            <!-- Desktop Nav Links -->
-            <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-300">
-                <a href="#listings" class="hover:text-white transition-colors">Browse Cars</a>
-                <a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a>
-                <a href="#list-your-car" class="hover:text-white transition-colors">List Vehicle</a>
-                <a href="#contact-us" class="hover:text-white transition-colors text-brand-400 font-semibold">Contact Us</a>
-                <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
-                <a href="https://instagram.com/carlistinglebanon" target="_blank" class="flex items-center gap-2 text-pink-500 hover:text-pink-400 transition-colors">
-                    <i class="fa-brands fa-instagram text-lg"></i>
-                    <span>@carlistinglebanon</span>
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
+                <a href="#inventory" class="hover:text-brand-400 transition-colors">Browse Cars</a>
+                <a href="#how-it-works" class="hover:text-brand-400 transition-colors">How It Works</a>
+                <a href="#list-your-car" class="hover:text-brand-400 transition-colors">List Vehicle</a>
+                <a href="#contact-us" class="hover:text-brand-400 transition-colors">Contact Us</a>
+                <a href="#faq" class="hover:text-brand-400 transition-colors">FAQ</a>
+                <a href="https://instagram.com/carlistinglebanon" target="_blank" class="text-pink-400 hover:text-pink-300 transition-colors flex items-center gap-1.5">
+                    <i class="fa-brands fa-instagram text-base"></i> @carlistinglebanon
                 </a>
             </nav>
 
-            <!-- Actions & Direct Contacts -->
-            <div class="flex items-center gap-3">
-                <div class="hidden lg:flex items-center gap-2 text-xs font-bold bg-emerald-500/10 border border-emerald-500/30 px-3 py-1.5 rounded-xl text-emerald-400">
-                    <i class="fa-brands fa-whatsapp text-sm"></i>
-                    <a href="https://wa.me/96170462818" target="_blank" class="hover:underline">70 462 818</a>
-                    <span class="text-gray-600">|</span>
-                    <a href="https://wa.me/96171911372" target="_blank" class="hover:underline">71 911 372</a>
+            <div class="hidden sm:flex items-center gap-4">
+                <div class="text-right hidden xl:block">
+                    <p class="text-xs text-gray-400">Direct Support</p>
+                    <p class="text-sm font-bold text-emerald-400"><i class="fa-brands fa-whatsapp"></i> +961 70 462 818</p>
                 </div>
-                <a href="#list-your-car" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-semibold text-sm text-black bg-brand-500 hover:bg-brand-400 active:scale-95 transition-all shadow-lg shadow-brand-500/20">
-                    <i class="fa-solid fa-plus-circle mr-2"></i> List Your Car
+                <a href="#list-your-car" class="px-5 py-2.5 rounded-xl font-bold text-black bg-brand-500 hover:bg-brand-400 transition-all shadow-lg shadow-brand-500/20 flex items-center gap-2">
+                    <i class="fa-solid fa-plus"></i> List Your Car
                 </a>
-                <button id="mobileMenuBtn" class="md:hidden text-gray-300 hover:text-white text-2xl focus:outline-none">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
             </div>
-        </div>
-
-        <!-- Mobile Menu Drawer -->
-        <div id="mobileMenu" class="hidden md:hidden glass-panel border-b border-gray-800 px-4 pt-3 pb-6 space-y-3">
-            <a href="#listings" class="block py-2 text-gray-300 hover:text-white font-medium">Browse Cars</a>
-            <a href="#how-it-works" class="block py-2 text-gray-300 hover:text-white font-medium">How It Works</a>
-            <a href="#list-your-car" class="block py-2 text-gray-300 hover:text-white font-medium">List Vehicle</a>
-            <a href="#contact-us" class="block py-2 text-brand-400 font-bold">Contact Us & Support</a>
-            <a href="#faq" class="block py-2 text-gray-300 hover:text-white font-medium">FAQ</a>
-            <div class="py-2 border-t border-gray-800 flex flex-col gap-1 text-xs">
-                <span class="text-gray-400 font-semibold">WhatsApp Support:</span>
-                <div class="flex gap-4 font-bold text-emerald-400">
-                    <a href="https://wa.me/96170462818" target="_blank"><i class="fa-brands fa-whatsapp mr-1"></i> +961 70 462 818</a>
-                    <a href="https://wa.me/96171911372" target="_blank"><i class="fa-brands fa-whatsapp mr-1"></i> +961 71 911 372</a>
-                </div>
-            </div>
-            <a href="https://instagram.com/carlistinglebanon" target="_blank" class="block py-2 text-pink-400 font-medium"><i class="fa-brands fa-instagram mr-2"></i> @carlistinglebanon</a>
-            <a href="#list-your-car" class="block w-full text-center py-3 rounded-xl font-bold text-black bg-brand-500 hover:bg-brand-400 mt-4">
-                <i class="fa-solid fa-plus-circle mr-2"></i> List Your Car
-            </a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-brand-500/10 blur-[130px] rounded-full pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto space-y-6">
-                
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-card border border-gray-800 text-xs font-semibold text-brand-400">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-900 border border-gray-800 text-xs font-semibold text-brand-400">
                     <span class="flex h-2 w-2 relative">
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                     </span>
                     Lebanon's Trusted Car Listing & Brokerage Platform
                 </div>
-
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight text-white">
                     Sell Your Vehicle in Lebanon — <span class="text-gradient">Fast, Safe & Effortless</span>
                 </h1>
-
                 <p class="text-lg sm:text-xl text-gray-400 leading-relaxed font-normal">
                     We feature your car directly on our platform and Instagram <a href="https://instagram.com/carlistinglebanon" target="_blank" class="text-pink-400 underline hover:text-pink-300">@carlistinglebanon</a>. <span class="text-gray-200 font-semibold">All commission details are dealt with transparently via WhatsApp!</span>
                 </p>
-
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                     <a href="#list-your-car" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-black bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-400 hover:to-brand-500 active:scale-95 transition-all shadow-xl shadow-brand-500/20 flex items-center justify-center gap-2">
                         <i class="fa-solid fa-car"></i> List Your Car Now
                     </a>
-                    <a href="#contact-us" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 transition-all flex items-center justify-center gap-2">
+                    <a href="https://wa.me/96170462818" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 transition-all flex items-center justify-center gap-2">
                         <i class="fa-brands fa-whatsapp text-lg"></i> Discuss Details on WhatsApp
                     </a>
-                </div>
-
-                <!-- Feature Highlights -->
-                <div class="pt-10 grid grid-cols-2 md:grid-cols-4 gap-4 text-left border-t border-gray-800/80 mt-10">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
-                            <i class="fa-brands fa-whatsapp text-lg"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm font-bold text-white">Direct WhatsApp</p>
-                            <p class="text-xs text-gray-400">Commission agreed directly</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-500 shrink-0">
-                            <i class="fa-brands fa-instagram text-lg"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm font-bold text-white">Instagram Reach</p>
-                            <p class="text-xs text-gray-400">Promoted to thousands</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-500 shrink-0">
-                            <i class="fa-solid fa-shield-halved text-lg"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm font-bold text-white">Filtered Inquiries</p>
-                            <p class="text-xs text-gray-400">Only serious buyers</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg bg-gray-800 border border-gray-700 flex items-center justify-center text-white shrink-0">
-                            <i class="fa-solid fa-bolt text-lg"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm font-bold text-white">Fast Response</p>
-                            <p class="text-xs text-gray-400">Active Lebanese team</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="py-20 bg-gray-900/40 relative border-y border-gray-800/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Simple & Transparent</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">How We Sell Your Car</h3>
-                <p class="text-gray-400 mt-3 text-sm">We handle buyer screening, advertising, and marketing for your vehicle.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Step 1 -->
-                <div class="glass-card p-8 rounded-2xl relative flex flex-col justify-between">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/30 text-brand-400 flex items-center justify-center text-2xl font-bold mb-6">
-                            01
-                        </div>
-                        <h4 class="text-xl font-bold text-white mb-2">1. Submit Specs & Photos</h4>
-                        <p class="text-sm text-gray-400 leading-relaxed">Fill out our website form or send your car's details directly to our WhatsApp support lines.</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-gray-800 text-xs font-semibold text-brand-400 flex items-center gap-1">
-                        Quick submission form below <i class="fa-solid fa-arrow-right text-[10px] ml-auto"></i>
-                    </div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="glass-card p-8 rounded-2xl relative flex flex-col justify-between border-emerald-500/30 bg-gradient-to-b from-brand-card to-gray-900">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-2xl font-bold mb-6">
-                            02
-                        </div>
-                        <h4 class="text-xl font-bold text-white mb-2">2. Agree Commission on WhatsApp</h4>
-                        <p class="text-sm text-gray-400 leading-relaxed">Our team will message you back on WhatsApp to discuss and agree on commission terms tailored to your car's price.</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-gray-800 text-xs font-bold text-emerald-400 flex items-center gap-1">
-                        <i class="fa-brands fa-whatsapp text-sm"></i> Direct WhatsApp Agreement
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="glass-card p-8 rounded-2xl relative flex flex-col justify-between">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-pink-500/20 border border-pink-500/30 text-pink-400 flex items-center justify-center text-2xl font-bold mb-6">
-                            03
-                        </div>
-                        <h4 class="text-xl font-bold text-white mb-2">3. Publish & Sell</h4>
-                        <p class="text-sm text-gray-400 leading-relaxed">Your car gets posted on our site and promoted on <span class="text-pink-400 font-semibold">@carlistinglebanon</span> until sold!</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-gray-800 text-xs font-semibold text-pink-400 flex items-center gap-1">
-                        Maximum buyer exposure <i class="fa-solid fa-check text-[10px] ml-auto"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Car Listings Section -->
-    <section id="listings" class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-                <div>
-                    <h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Active Vehicles</h2>
-                    <h3 class="text-3xl font-extrabold text-white">Car Inventory Lebanon</h3>
-                </div>
-                <div class="flex items-center gap-3">
-                    <p class="text-sm text-gray-400"><span id="carCount" class="text-white font-bold">0</span> active listings</p>
-                    <a href="#list-your-car" class="text-xs px-3 py-1.5 bg-brand-500/10 border border-brand-500/40 text-brand-400 rounded-lg hover:bg-brand-500/20 transition-colors font-semibold">
-                        + List Vehicle
-                    </a>
-                </div>
-            </div>
-
-            <!-- Search & Filter Bar -->
-            <div class="glass-panel p-4 md:p-6 rounded-2xl mb-10 shadow-2xl">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-400 mb-1.5">Make / Brand</label>
-                        <select id="filterBrand" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-3 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-brand-500">
-                            <option value="All">All Makes</option>
-                            <option value="BMW">BMW</option>
-                            <option value="Mercedes-Benz">Mercedes-Benz</option>
-                            <option value="Porsche">Porsche</option>
-                            <option value="Toyota">Toyota</option>
-                            <option value="Honda">Honda</option>
-                            <option value="Audi">Audi</option>
-                            <option value="Volkswagen">Volkswagen</option>
-                            <option value="Hyundai">Hyundai</option>
-                            <option value="Kia">Kia</option>
-                            <option value="Nissan">Nissan</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-400 mb-1.5">Location / Region</label>
-                        <select id="filterLocation" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-3 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-brand-500">
-                            <option value="All">All Lebanon</option>
-                            <option value="Beirut">Beirut</option>
-                            <option value="Mount Lebanon">Mount Lebanon</option>
-                            <option value="Metn">Metn</option>
-                            <option value="Keserwan">Keserwan / Jounieh</option>
-                            <option value="Chouf">Chouf</option>
-                            <option value="Aley">Aley</option>
-                            <option value="Byblos">Byblos / Jbeil</option>
-                            <option value="Tripoli">Tripoli / North</option>
-                            <option value="Koura">Koura</option>
-                            <option value="Batroun">Batroun</option>
-                            <option value="Zgharta">Zgharta</option>
-                            <option value="Sidon">Sidon / Saida</option>
-                            <option value="Tyre">Tyre / Sour</option>
-                            <option value="Nabatieh">Nabatieh</option>
-                            <option value="Bekaa">Bekaa / Zahle</option>
-                            <option value="Baalbek">Baalbek</option>
-                            <option value="Hermel">Hermel</option>
-                            <option value="Rashaya">Rashaya</option>
-                            <option value="Hasbaya">Hasbaya</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-400 mb-1.5">Max Price (USD $)</label>
-                        <select id="filterPrice" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-3 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-brand-500">
-                            <option value="All">Any Price</option>
-                            <option value="15000">Under $15,000</option>
-                            <option value="30000">Under $30,000</option>
-                            <option value="50000">Under $50,000</option>
-                            <option value="100000">Under $100,000</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-400 mb-1.5">Transmission</label>
-                        <select id="filterTransmission" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-3 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-brand-500">
-                            <option value="All">All Transmissions</option>
-                            <option value="Automatic">Automatic</option>
-                            <option value="Manual">Manual</option>
-                        </select>
-                    </div>
-
-                    <div class="flex items-end">
-                        <button id="resetFilters" class="w-full py-2.5 bg-gray-800 hover:bg-gray-700 text-gray-300 font-semibold text-sm rounded-xl transition-colors flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-rotate-right text-xs"></i> Reset Filters
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Listings Cards Grid -->
-            <div id="carGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- User submitted cars dynamically render here -->
-            </div>
-
-            <!-- Clean Interactive Empty State -->
-            <div id="noResults" class="glass-card rounded-3xl p-10 md:p-16 text-center max-w-3xl mx-auto border-dashed border-gray-800">
-                <div class="w-20 h-20 bg-brand-500/10 border border-brand-500/20 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-500 text-3xl">
-                    <i class="fa-solid fa-car-side"></i>
-                </div>
-                <h4 class="text-2xl font-extrabold text-white mb-2">No Vehicles Currently Listed</h4>
-                <p class="text-gray-400 text-sm max-w-md mx-auto leading-relaxed mb-8">
-                    Be the first to list your vehicle! We will showcase your car to potential buyers across Lebanon and feature it on <span class="text-pink-400 font-medium">@carlistinglebanon</span>.
-                </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="#list-your-car" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold text-black bg-brand-500 hover:bg-brand-400 transition-all shadow-lg shadow-brand-500/20 flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-plus-circle"></i> Submit Vehicle Now
-                    </a>
-                    <a href="https://wa.me/96170462818?text=Hi!%20I'd%20like%20to%20list%20my%20car%20with%20Car%20Listing%20Lebanon." target="_blank" class="w-full sm:w-auto px-6 py-3.5 rounded-xl font-bold text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 transition-all flex items-center justify-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-lg"></i> Message Us on WhatsApp
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- List Your Car Form Section -->
-    <section id="list-your-car" class="py-20 bg-gray-900/50 relative border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-
-                <!-- Left Column: Simple Policy Banner -->
-                <div class="lg:col-span-5 space-y-6">
-                    <div>
-                        <h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Easy Listing</h2>
-                        <h3 class="text-3xl font-extrabold text-white">List Your Car With Us</h3>
-                        <p class="text-gray-400 mt-3 text-sm leading-relaxed">
-                            Submit your car details using the form. Once submitted, our team will connect with you directly on WhatsApp to coordinate details and agree on commission.
-                        </p>
-                    </div>
-
-                    <!-- WhatsApp Commission Callout Box -->
-                    <div class="glass-card p-6 rounded-2xl border-emerald-500/30 bg-gradient-to-br from-emerald-950/20 to-gray-900 space-y-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-xl">
-                                <i class="fa-brands fa-whatsapp"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-base font-bold text-white">Commission Agreement</h4>
-                                <p class="text-xs text-emerald-400 font-semibold">Discussed & finalized directly on WhatsApp</p>
-                            </div>
-                        </div>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            We don't charge upfront listing fees. All commission rates and selling agreements are dealt with transparently on WhatsApp before publishing.
-                        </p>
-                        <div class="pt-2 border-t border-gray-800/80 flex flex-col gap-2">
-                            <a href="https://wa.me/96170462818?text=Hi!%20I'd%20like%20to%20discuss%20listing%20my%20car." target="_blank" class="text-xs font-bold text-emerald-300 hover:underline flex items-center gap-1.5">
-                                <i class="fa-solid fa-phone-volume"></i> WhatsApp Line 1: +961 70 462 818
-                            </a>
-                            <a href="https://wa.me/96171911372?text=Hi!%20I'd%20like%20to%20discuss%20listing%20my%20car." target="_blank" class="text-xs font-bold text-emerald-300 hover:underline flex items-center gap-1.5">
-                                <i class="fa-solid fa-phone-volume"></i> WhatsApp Line 2: +961 71 911 372
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Instagram Promo Note -->
-                    <div class="glass-panel p-5 rounded-2xl border-gray-800 flex items-center gap-4">
-                        <i class="fa-brands fa-instagram text-pink-500 text-3xl shrink-0"></i>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            Every listed vehicle is featured on <strong class="text-white">@carlistinglebanon</strong> Instagram stories and feeds for maximum reach.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Right Column: Submission Form -->
-                <div class="lg:col-span-7">
-                    <div class="glass-panel p-6 sm:p-8 rounded-3xl border-gray-800 shadow-2xl">
-                        <div class="mb-6">
-                            <h3 class="text-2xl font-bold text-white">Vehicle Details Form</h3>
-                            <p class="text-xs text-gray-400 mt-1">Fill in specs below to add your car to our website catalog and connect directly with our WhatsApp team!</p>
-                        </div>
-
-                        <form id="carListingForm" class="space-y-4">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Make / Brand *</label>
-                                    <input type="text" id="inputBrand" required placeholder="e.g. BMW, Mercedes, Toyota" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Model *</label>
-                                    <input type="text" id="inputModel" required placeholder="e.g. 320i, C200, Corolla" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
-                                   
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Year *</label>
-                                    <input type="number" id="inputYear" min="1990" max="2027" required placeholder="e.g. 2021" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Mileage (km) *</label>
-                                    <input type="number" id="inputMileage" required placeholder="e.g. 50000" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Asking Price (USD $) *</label>
-                                    <input type="number" id="inputPrice" required placeholder="e.g. 25000" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Location / Region *</label>
-                                    <select id="inputLocation" required class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
-                                        <option value="">Select Region</option>
-                                        <option value="Beirut">Beirut</option>
-                                        <option value="Mount Lebanon">Mount Lebanon</option>
-                                        <option value="Metn">Metn</option>
-                                        <option value="Keserwan">Keserwan / Jounieh</option>
-                                        <option value="Chouf">Chouf</option>
-                                        <option value="Aley">Aley</option>
-                                        <option value="Byblos">Byblos / Jbeil</option>
-                                        <option value="Tripoli">Tripoli / North</option>
-                                        <option value="Koura">Koura</option>
-                                        <option value="Batroun">Batroun</option>
-                                        <option value="Zgharta">Zgharta</option>
-                                        <option value="Sidon">Sidon / Saida</option>
-                                        <option value="Tyre">Tyre / Sour</option>
-                                        <option value="Nabatieh">Nabatieh</option>
-                                        <option value="Bekaa">Bekaa / Zahle</option>
-                                        <option value="Baalbek">Baalbek</option>
-                                        <option value="Hermel">Hermel</option>
-                                        <option value="Rashaya">Rashaya</option>
-                                        <option value="Hasbaya">Hasbaya</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Transmission *</label>
-                                    <select id="inputTransmission" required class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
-                                        <option value="Automatic">Automatic</option>
-                                        <option value="Manual">Manual</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Your Phone Number *</label>
-                                    <input type="tel" id="inputPhone" required placeholder="+961 70 000 000" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-semibold text-gray-300 mb-1">Car Photo URL (Optional)</label>
-                                <input type="text" id="image_upload" accept="image/*" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-3 py-2 text-sm text-gray-200 focus:outline-none focus:border-brand-500" />
-                                <p class="text-[10px] text-gray-500 mt-1">Leave blank for default placeholder photo.</p>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-semibold text-gray-300 mb-1">Vehicle Condition & Key Options</label>
-                                <textarea id="inputNotes" rows="3" placeholder="Clean title, service records, panoramic roof..." class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500"></textarea>
-                            </div>
-
-                            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white font-bold text-base shadow-xl shadow-emerald-600/20 transition-all flex items-center justify-center gap-2">
-                                <i class="fa-brands fa-whatsapp text-xl"></i> Publish & Discuss Commission on WhatsApp
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Us & Support Section -->
-    <section id="contact-us" class="py-20 relative bg-black/50 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Direct Lines</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Contact Us & Support</h3>
-                <p class="text-gray-400 mt-3 text-sm">Need help listing a car, looking for a specific vehicle, or discussing commission? Contact us directly.</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                
-                <!-- Direct Phone Cards -->
-                <div class="lg:col-span-5 space-y-6">
-                    
-                    <!-- Line 1 -->
-                    <div class="glass-card p-6 rounded-2xl border-emerald-500/30 flex items-start justify-between gap-4">
-                        <div class="space-y-1">
-                            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-[11px] font-bold">
-                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Primary Support Line
-                            </div>
-                            <h4 class="text-2xl font-black text-white pt-1">+961 70 462 818</h4>
-                            <p class="text-xs text-gray-400">Calls & WhatsApp (Lebanon)</p>
-                        </div>
-                        <div class="flex flex-col gap-2 shrink-0">
-                            <a href="https://wa.me/96170462818?text=Hi!%20I'm%20reaching%20out%20from%20your%20website." target="_blank" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-lg shadow-emerald-600/20">
-                                <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
-                            </a>
-                            <a href="tel:+96170462818" class="px-4 py-2 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors">
-                                <i class="fa-solid fa-phone text-xs"></i> Call
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Line 2 -->
-                    <div class="glass-card p-6 rounded-2xl border-brand-500/30 flex items-start justify-between gap-4">
-                        <div class="space-y-1">
-                            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-400 text-[11px] font-bold">
-                                <span class="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse"></span> Secondary Support Line
-                            </div>
-                            <h4 class="text-2xl font-black text-white pt-1">+961 71 911 372</h4>
-                            <p class="text-xs text-gray-400">Calls & WhatsApp (Lebanon)</p>
-                        </div>
-                        <div class="flex flex-col gap-2 shrink-0">
-                            <a href="https://wa.me/96171911372?text=Hi!%20I'm%20reaching%20out%20from%20your%20website." target="_blank" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-lg shadow-emerald-600/20">
-                                <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
-                            </a>
-                            <a href="tel:+96171911372" class="px-4 py-2 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors">
-                                <i class="fa-solid fa-phone text-xs"></i> Call
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Instagram Card -->
-                    <div class="glass-card p-6 rounded-2xl border-pink-500/30 flex items-center justify-between">
-                        <div>
-                            <span class="text-xs font-bold text-pink-400 block uppercase">Instagram DMs</span>
-                            <h4 class="text-lg font-bold text-white mt-0.5">@carlistinglebanon</h4>
-                        </div>
-                        <a href="https://instagram.com/carlistinglebanon" target="_blank" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold text-xs flex items-center gap-2 hover:opacity-90 transition-opacity">
-                            <i class="fa-brands fa-instagram text-sm"></i> Visit Profile
-                        </a>
-                    </div>
-
-                </div>
-
-                <!-- Fast WhatsApp Message Form -->
-                <div class="lg:col-span-7">
-                    <div class="glass-panel p-6 sm:p-8 rounded-3xl border-gray-800">
-                        <h4 class="text-xl font-bold text-white mb-2">Send a Support Message</h4>
-                        <p class="text-xs text-gray-400 mb-6">Select your topic below and send an inquiry directly to our WhatsApp team.</p>
-
-                        <form id="contactInquiryForm" class="space-y-4">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Your Full Name *</label>
-                                    <input type="text" id="contactName" required placeholder="e.g. Joe El Khoury" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Your Phone Number *</label>
-                                    <input type="tel" id="contactPhone" required placeholder="+961 70 000 000" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Send Message To *</label>
-                                    <select id="contactRecipient" required class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
-                                        <option value="96170462818">+961 70 462 818 (Line 1)</option>
-                                        <option value="96171911372">+961 71 911 372 (Line 2)</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-gray-300 mb-1">Topic</label>
-                                    <select id="contactTopic" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
-                                        <option value="Want to Sell a Car & Discuss Commission">List my car & discuss commission</option>
-                                        <option value="Looking to Buy a Car">I'm looking to buy a vehicle</option>
-                                        <option value="General Support">General Support</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-semibold text-gray-300 mb-1">Your Message *</label>
-                                <textarea id="contactMessage" rows="4" required placeholder="Write your message here..." class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500"></textarea>
-                            </div>
-
-                            <button type="submit" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center gap-2">
-                                <i class="fa-brands fa-whatsapp text-lg"></i> Send via WhatsApp
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="py-16 bg-gray-900/30 border-t border-gray-800/80">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Got Questions?</h2>
-                <h3 class="text-3xl font-extrabold text-white">Frequently Asked Questions</h3>
-            </div>
-
-            <div class="space-y-4" id="faqAccordion">
-                <div class="glass-card rounded-2xl p-5 cursor-pointer faq-item">
-                    <div class="flex justify-between items-center">
-                        <h4 class="font-bold text-white text-base">How are commission fees handled?</h4>
-                        <i class="fa-solid fa-chevron-down text-gray-400 faq-icon transition-transform"></i>
-                    </div>
-                    <div class="faq-answer hidden mt-3 text-sm text-gray-400 leading-relaxed pt-3 border-t border-gray-800">
-                        All commission details are discussed and agreed upon directly via WhatsApp when you submit your vehicle listing. There are no surprise upfront fees!
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-2xl p-5 cursor-pointer faq-item">
-                    <div class="flex justify-between items-center">
-                        <h4 class="font-bold text-white text-base">Where will my vehicle be advertised?</h4>
-                        <i class="fa-solid fa-chevron-down text-gray-400 faq-icon transition-transform"></i>
-                    </div>
-                    <div class="faq-answer hidden mt-3 text-sm text-gray-400 leading-relaxed pt-3 border-t border-gray-800">
-                        Your vehicle will be advertised on our official website catalog, our Instagram page <strong class="text-white">@carlistinglebanon</strong>, TikTok, Facebook, and all our official social media and advertising platforms for maximum reach across Lebanon!
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-2xl p-5 cursor-pointer faq-item">
-                    <div class="flex justify-between items-center">
-                        <h4 class="font-bold text-white text-base">How do prospective buyers contact me?</h4>
-                        <i class="fa-solid fa-chevron-down text-gray-400 faq-icon transition-transform"></i>
-                    </div>
-                    <div class="faq-answer hidden mt-3 text-sm text-gray-400 leading-relaxed pt-3 border-t border-gray-800">
-                        Our brokerage team filters serious buyer inquiries on WhatsApp and connects them directly with you to schedule viewings.
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black/90 border-t border-gray-800/80 pt-14 pb-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-gray-800">
-                <div class="space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-500 to-brand-accent flex items-center justify-center text-black font-black text-lg">
-                            <i class="fa-solid fa-car-side"></i>
-                        </div>
-                        <span class="text-lg font-extrabold text-white tracking-tight">CAR LISTING LEBANON</span>
-                    </div>
-                    <p class="text-xs text-gray-400 leading-relaxed">
-                        Lebanon's trusted auto brokerage platform. Connecting buyers and sellers seamlessly across all Lebanese regions.
-                    </p>
+    <footer class="glass-panel border-t border-gray-800/80 mt-20 py-10 text-gray-400 text-sm z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-brand-500 flex items-center justify-center text-black font-bold">
+                    <i class="fa-solid fa-car"></i>
                 </div>
-
-                <div>
-                    <h5 class="text-sm font-bold text-white mb-4">Quick Links</h5>
-                    <ul class="space-y-2 text-xs text-gray-400">
-                        <li><a href="#listings" class="hover:text-white transition-colors">Browse Active Cars</a></li>
-                        <li><a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
-                        <li><a href="#list-your-car" class="hover:text-white transition-colors">List Your Vehicle</a></li>
-                        <li><a href="#contact-us" class="hover:text-white transition-colors">Contact Us & Support</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h5 class="text-sm font-bold text-white mb-4">Locations Served</h5>
-                    <ul class="space-y-1.5 text-xs text-gray-400">
-                        <li>Beirut & Mount Lebanon</li>
-                        <li>Metn, Keserwan, Chouf & Aley</li>
-                        <li>Tripoli, Koura, Batroun & Zgharta</li>
-                        <li>Sidon, Tyre, Nabatieh & Bekaa</li>
-                        <li>Baalbek & Hermel</li>
-                        <li>Rashaya & Hasbaya</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h5 class="text-sm font-bold text-white mb-4">Support Contact</h5>
-                    <div class="space-y-3 text-xs text-gray-400">
-                        <p class="flex items-center gap-2">
-                            <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
-                            <a href="https://wa.me/96170462818" target="_blank" class="hover:text-white">+961 70 462 818</a>
-                        </p>
-                        <p class="flex items-center gap-2">
-                            <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
-                            <a href="https://wa.me/96171911372" target="_blank" class="hover:text-white">+961 71 911 372</a>
-                        </p>
-                        <p class="flex items-center gap-2">
-                            <i class="fa-brands fa-instagram text-pink-400 text-sm"></i>
-                            <a href="https://instagram.com/carlistinglebanon" target="_blank" class="hover:text-white">@carlistinglebanon</a>
-                        </p>
-                    </div>
-                </div>
+                <span class="text-white font-bold tracking-wider">CAR LISTING LEBANON</span>
             </div>
-
-            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
-                <p>&copy; 2026 Car Listing Lebanon. All rights reserved.</p>
-                <div class="flex gap-4">
-                    <a href="#" class="hover:text-gray-400">Terms</a>
-                    <a href="#" class="hover:text-gray-400">Privacy</a>
-                </div>
-            </div>
+            <p class="text-xs text-gray-500">© 2026 Car Listing Lebanon. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Vehicle Detail Modal -->
-    <div id="carModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-        <div class="glass-panel w-full max-w-3xl rounded-3xl overflow-hidden border-gray-700 max-h-[90vh] flex flex-col relative">
-            <button id="closeModal" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/60 text-white flex items-center justify-center z-10 hover:bg-black transition-colors">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div id="modalContent" class="overflow-y-auto p-6 space-y-6">
-                <!-- Modal content loaded dynamically -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Application Script -->
-    <script>
-        let carsData = JSON.parse(localStorage.getItem('cll_user_cars')) || [];
-
-        const carGrid = document.getElementById('carGrid');
-        const noResults = document.getElementById('noResults');
-        const carCount = document.getElementById('carCount');
-
-        const filterBrand = document.getElementById('filterBrand');
-        const filterLocation = document.getElementById('filterLocation');
-        const filterPrice = document.getElementById('filterPrice');
-        const filterTransmission = document.getElementById('filterTransmission');
-        const resetFiltersBtn = document.getElementById('resetFilters');
-
-        const carModal = document.getElementById('carModal');
-        const modalContent = document.getElementById('modalContent');
-        const closeModal = document.getElementById('closeModal');
-
-        function renderCars(cars) {
-            carGrid.innerHTML = '';
-            carCount.textContent = cars.length;
-
-            if (cars.length === 0) {
-                noResults.classList.remove('hidden');
-                carGrid.classList.add('hidden');
-                return;
-            } else {
-                noResults.classList.add('hidden');
-                carGrid.classList.remove('hidden');
-            }
-
-            cars.forEach(car => {
-                const card = document.createElement('div');
-                card.className = "glass-card rounded-2xl overflow-hidden flex flex-col justify-between group";
-                
-                const carImg = car.image && car.image.trim() !== '' 
-                    ? car.image 
-                    : 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80';
-
-                card.innerHTML = `
-                    <div>
-                        <div class="relative h-52 overflow-hidden bg-gray-900">
-                            <img src="${carImg}" alt="${car.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-white border border-white/10">
-                                <i class="fa-solid fa-location-dot text-brand-500 mr-1"></i> ${car.location}
-                            </div>
-                            <div class="absolute bottom-3 right-3 bg-brand-500 font-extrabold text-black px-3 py-1 rounded-lg text-sm shadow-md">
-                                $${parseInt(car.price).toLocaleString()} USD
-                            </div>
-                        </div>
-
-                        <div class="p-5">
-                            <h4 class="text-lg font-bold text-white group-hover:text-brand-400 transition-colors">${car.title}</h4>
-                            
-                            <div class="grid grid-cols-3 gap-2 my-4 text-center">
-                                <div class="bg-gray-900 p-2 rounded-xl text-xs border border-gray-800">
-                                    <p class="text-gray-500 font-medium">Year</p>
-                                    <p class="font-bold text-gray-200 mt-0.5">${car.year}</p>
-                                </div>
-                                <div class="bg-gray-900 p-2 rounded-xl text-xs border border-gray-800">
-                                    <p class="text-gray-500 font-medium">Mileage</p>
-                                    <p class="font-bold text-gray-200 mt-0.5">${parseInt(car.mileage).toLocaleString()} km</p>
-                                </div>
-                                <div class="bg-gray-900 p-2 rounded-xl text-xs border border-gray-800">
-                                    <p class="text-gray-500 font-medium">Gear</p>
-                                    <p class="font-bold text-gray-200 mt-0.5">${car.transmission}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="px-5 pb-5 pt-0 flex gap-2">
-                        <button onclick="openCarModal(${car.id})" class="flex-1 py-2.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5">
-                            <i class="fa-solid fa-eye"></i> View Details
-                        </button>
-                        <a href="https://wa.me/96170462818?text=Hi!%20I'm%20interested%20in%20the%20${encodeURIComponent(car.title)}%20listed%20for%20$${car.price}" target="_blank" class="px-3 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors flex items-center justify-center" title="Chat on WhatsApp">
-                            <i class="fa-brands fa-whatsapp text-base"></i>
-                        </a>
-                    </div>
-                `;
-                carGrid.appendChild(card);
-            });
-        }
-
-        function filterCars() {
-            const selectedBrand = filterBrand.value;
-            const selectedLocation = filterLocation.value;
-            const selectedPrice = filterPrice.value;
-            const selectedTrans = filterTransmission.value;
-
-            const filtered = carsData.filter(car => {
-                const matchBrand = (selectedBrand === 'All' || car.brand.toLowerCase().includes(selectedBrand.toLowerCase()));
-                const matchLocation = (selectedLocation === 'All' || car.location === selectedLocation);
-                const matchPrice = (selectedPrice === 'All' || car.price <= parseInt(selectedPrice));
-                const matchTrans = (selectedTrans === 'All' || car.transmission === selectedTrans);
-
-                return matchBrand && matchLocation && matchPrice && matchTrans;
-            });
-
-            renderCars(filtered);
-        }
-
-        filterBrand.addEventListener('change', filterCars);
-        filterLocation.addEventListener('change', filterCars);
-        filterPrice.addEventListener('change', filterCars);
-        filterTransmission.addEventListener('change', filterCars);
-
-        resetFiltersBtn.addEventListener('click', () => {
-            filterBrand.value = 'All';
-            filterLocation.value = 'All';
-            filterPrice.value = 'All';
-            filterTransmission.value = 'All';
-            renderCars(carsData);
-        });
-
-        window.openCarModal = function(id) {
-            const car = carsData.find(c => c.id === id);
-            if (!car) return;
-
-            const carImg = car.image && car.image.trim() !== '' 
-                ? car.image 
-                : 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80';
-
-            modalContent.innerHTML = `
-                <div class="relative h-64 sm:h-80 rounded-2xl overflow-hidden bg-gray-900">
-                    <img src="${carImg}" alt="${car.title}" class="w-full h-full object-cover">
-                    <div class="absolute bottom-4 left-4 bg-black/80 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10">
-                        <span class="text-xs text-gray-400 block">Asking Price</span>
-                        <span class="text-2xl font-extrabold text-emerald-400">$${parseInt(car.price).toLocaleString()} USD</span>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-2xl font-extrabold text-white">${car.title}</h3>
-                    <p class="text-xs text-gray-400 mt-1"><i class="fa-solid fa-location-dot text-brand-500"></i> Location: ${car.location}, Lebanon</p>
-                </div>
-
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-gray-900 p-4 rounded-2xl text-xs border border-gray-800">
-                    <div>
-                        <span class="text-gray-500 block">Year</span>
-                        <span class="font-bold text-white text-sm">${car.year}</span>
-                    </div>
-                    <div>
-                        <span class="text-gray-500 block">Mileage</span>
-                        <span class="font-bold text-white text-sm">${parseInt(car.mileage).toLocaleString()} km</span>
-                    </div>
-                    <div>
-                        <span class="text-gray-500 block">Transmission</span>
-                        <span class="font-bold text-white text-sm">${car.transmission}</span>
-                    </div>
-                    <div>
-                        <span class="text-gray-500 block">Seller Contact</span>
-                        <span class="font-bold text-emerald-400 text-sm">${car.phone}</span>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="text-sm font-bold text-white mb-2">Vehicle Specs & Details</h4>
-                    <p class="text-sm text-gray-300 leading-relaxed bg-gray-900 p-4 rounded-2xl border border-gray-800">${car.notes || 'No extra notes provided.'}</p>
-                </div>
-
-                <div class="pt-2 flex flex-col sm:flex-row gap-3">
-                    <a href="https://wa.me/96170462818?text=Hi!%20I'm%20inquiring%20about%20the%20${encodeURIComponent(car.title)}%20for%20$${car.price}" target="_blank" class="flex-1 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs text-center flex items-center justify-center gap-2 transition-all">
-                        <i class="fa-brands fa-whatsapp text-base"></i> Contact Line 1 (70 462 818)
-                    </a>
-                    <a href="https://wa.me/96171911372?text=Hi!%20I'm%20inquiring%20about%20the%20${encodeURIComponent(car.title)}%20for%20$${car.price}" target="_blank" class="flex-1 py-3 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs text-center flex items-center justify-center gap-2 transition-all">
-                        <i class="fa-brands fa-whatsapp text-base"></i> Contact Line 2 (71 911 372)
-                    </a>
-                </div>
-            `;
-
-            carModal.classList.remove('hidden');
-        };
-
-        closeModal.addEventListener('click', () => carModal.classList.add('hidden'));
-        carModal.addEventListener('click', (e) => {
-            if (e.target === carModal) carModal.classList.add('hidden');
-        });
-
-        document.getElementById('contactInquiryForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('contactName').value.trim();
-            const phone = document.getElementById('contactPhone').value.trim();
-            const targetPhone = document.getElementById('contactRecipient').value;
-            const topic = document.getElementById('contactTopic').value;
-            const msg = document.getElementById('contactMessage').value.trim();
-            
-            const text = `Hi Car Listing Lebanon! Message from website:%0A%0A- Name: ${encodeURIComponent(name)}%0A- Phone: ${encodeURIComponent(phone)}%0A- Topic: ${encodeURIComponent(topic)}%0A- Message: ${encodeURIComponent(msg)}`;
-
-            window.open(`https://wa.me/${targetPhone}?text=${text}`, '_blank');
-            this.reset();
-        });
-
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const answer = item.querySelector('.faq-answer');
-                const icon = item.querySelector('.faq-icon');
-                
-                const isHidden = answer.classList.contains('hidden');
-                
-                document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
-                document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
-
-                if (isHidden) {
-                    answer.classList.remove('hidden');
-                    icon.classList.add('rotate-180');
-                }
-            });
-        });
-
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
- document.getElementById('carListingForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-
-    // 1. Upload the image to Supabase Storage
-    const fileInput = document.getElementById('image_upload');
-    let uploadedImageUrl = ''; 
-
-    if (fileInput && fileInput.files.length > 0) {
-        const file = fileInput.files[0];
-        const fileExt = file.name.split('.').pop();
-        const fileName = `${Date.now()}.${fileExt}`;
-
-        const { data: uploadData, error: uploadError } = await supabase.storage
-            .from('car-images')
-            .upload(fileName, file);
-
-        if (uploadError) {
-            alert('Error uploading image: ' + uploadError.message);
-            return; 
-        }
-
-        const { data: urlData } = supabase.storage.from('car-images').getPublicUrl(fileName);
-        uploadedImageUrl = urlData.publicUrl;
-    }
-
-    // 2. Gather the text inputs
-    const brand = document.getElementById('inputBrand').value.trim();
-    const model = document.getElementById('inputModel').value.trim();
-    const year = document.getElementById('inputYear').value;
-    const mileage = document.getElementById('inputMileage').value;
-    const price = document.getElementById('inputPrice').value;
-    const location = document.getElementById('inputLocation').value;
-    const transmission = document.getElementById('inputTransmission').value;
-    const phone = document.getElementById('inputPhone').value;
-    const notes = document.getElementById('inputNotes').value;
-
-    // 3. Save the car details to the Supabase Database
-    const newCar = {
-        make: brand,
-        model: model,
-        year: parseInt(year),
-        mileage: parseInt(mileage),
-        price: parseInt(price),
-        location: location,
-        transmission: transmission,
-        phone: phone,
-        image_url: uploadedImageUrl,
-        condition: notes
-    };
-
-     const { data, error } = await supabaseClient.from('Cars').insert([newCar]);
-
-    if (error) {
-        alert('Error submitting vehicle: ' + error.message);
-        return;
-    } 
-
-    // 4. Success message, open WhatsApp, and reload page to show new car
-    alert('Vehicle listed successfully!');
-    
-    const text = `Hi Car Listing Lebanon! I submitted my car specs on the site to discuss listing & commission:%0A%0A- Vehicle: ${brand} ${model} (${year})%0A- Mileage: ${mileage} km%0A- Asking Price: $${price} USD%0A- Location: ${location}%0A- Gear: ${transmission}%0A- Phone: ${phone}%0A- Notes: ${notes}`;
-    window.open(`https://wa.me/96170462818?text=${text}`, '_blank');
-    
-    this.reset();
-    window.location.reload(); 
-});
-    </script>
-  <!-- Supabase Setup -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-    const supabaseUrl ='https://dwhabztmqaxmxamwzifa.supabase.co';
-    const supabaseKey = 'sb_publishable_0QclRr-HrKmzBcgYjvwvlA_YOFYpxra';
-    const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
-
-    console.log("Supabase connected!");
-async function loadCars() {
-    // 1. Fetch all cars from your database
-    const { data: cars, error } = await supabaseClient.from('Cars').select('*');
-    
-    if (error) {
-        console.error("Error loading cars:", error);
-        return;
-    }
-
-    // 2. Update the "Active Listings" number
-    const countElement = document.getElementById('carCount');
-    if (countElement) countElement.innerText = cars.length;
-
-    // 3. Find the car container (assuming it's named carGrid)
-    const carGrid = document.getElementById('carGrid');
-    if (!carGrid) return; 
-
-    // 4. If no cars, show a message
-    if (cars.length === 0) {
-        carGrid.innerHTML = `<div class="col-span-full text-center py-12 text-gray-400 font-bold">No Vehicles Currently Listed</div>`;
-        return;
-    }
-
-    // 5. Draw the cars on the screen!
-    carGrid.innerHTML = cars.map(car => `
-        <div class="glass-card rounded-2xl overflow-hidden shadow-lg border border-gray-800">
-            <img src="${car.image_upload || 'https://via.placeholder.com/400x250?text=No+Photo'}" alt="${car.make} ${car.model}" class="w-full h-48 object-cover">
-            <div class="p-5">
-                <h4 class="text-xl font-bold text-white">${car.make} ${car.model}</h4>
-                <p class="text-brand-500 font-extrabold text-lg mt-1">$${car.price}</p>
-                <div class="flex flex-wrap gap-2 mt-3 text-xs text-gray-400">
-                    <span class="bg-gray-800 px-2 py-1 rounded">${car.year || 'N/A'}</span>
-                    <span class="bg-gray-800 px-2 py-1 rounded">${car.transmission || 'N/A'}</span>
-     
-            </div>
-        </div>
-    `).join('');
-}
-// 1. Check session state when the page loads
-supabaseClient.auth.getSession().then(({ data: { session } }) => {
-    updateAuthUI(session);
-});
-
-// Listen for login/logout changes dynamically
-supabaseClient.auth.onAuthStateChange((event, session) => {
-    updateAuthUI(session);
-});
-
-// 2. Sign Up function
-async function handleSignUp() {
-    const email = document.getElementById('auth-email').value;
-    const password = document.getElementById('auth-password').value;
-
-    const { data, error } = await supabaseClient.auth.signUp({ email, password });
-    if (error) {
-        alert("Sign Up Error: " + error.message);
-        return;
-    }
-    alert("Account created! You can now sign in.");
-}
-
-// 3. Sign In function
-async function handleSignIn() {
-    const email = document.getElementById('auth-email').value;
-    const password = document.getElementById('auth-password').value;
-
-    const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
-    if (error) {
-        alert("Sign In Error: " + error.message);
-        return;
-    }
-}
-
-// 4. Sign Out function
-async function handleSignOut() {
-    await supabaseClient.auth.signOut();
-}
-
-// 5. Toggle visibility and lock/unlock the form section
-function updateAuthUI(session) {
-    const authInputs = document.getElementById('auth-form-inputs');
-    const userInfo = document.getElementById('auth-user-info');
-    const authTitle = document.getElementById('auth-title');
-    const authSubtitle = document.getElementById('auth-subtitle');
-    
-    // Finds your form element
-    const carForm = document.querySelector('form');
-
-    if (session) {
-        // User is logged in: Show form, hide login inputs
-        if (authInputs) authInputs.classList.add('hidden');
-        if (userInfo) userInfo.classList.remove('hidden');
-        if (authTitle) authTitle.innerText = "Welcome, " + session.user.email;
-        if (authSubtitle) authSubtitle.innerText = "You are ready to list your car below.";
-        if (carForm) {
-            carForm.style.opacity = "1";
-            carForm.style.pointerEvents = "auto";
-        }
-    } else {
-        // User is logged out: Hide form / lock it down
-        if (authInputs) authInputs.classList.remove('hidden');
-        if (userInfo) userInfo.classList.add('hidden');
-        if (authTitle) authTitle.innerText = "Account Required";
-        if (authSubtitle) authSubtitle.innerText = "Please sign in or create an account to list your car.";
-        if (carForm) {
-            carForm.style.opacity = "0.3";
-            carForm.style.pointerEvents = "none";
-        }
-    }
-}
-// Tell the website to run this function immediately when the page loads
-loadCars();   
-
- function openAuthModal() {
-    supabaseClient.auth.getSession().then(({ data: { session } }) => {
-        if (!session) {
-            document.getElementById('auth-modal').classList.remove('hidden');
-        } else {
-            // Already logged in, scroll down to the form
-            document.querySelector('form')?.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-}
-
-function closeAuthModal() {
-    document.getElementById('auth-modal').classList.add('hidden');
-}
-
-async function handleSignUp() {
-    const email = document.getElementById('auth-email').value;
-    const password = document.getElementById('auth-password').value;
-
-    const { data, error } = await supabaseClient.auth.signUp({ email, password });
-    if (error) {
-        alert("Sign Up Error: " + error.message);
-        return;
-    }
-    alert("Account created! You can now sign in.");
-}
-
-async function handleSignIn() {
-    const email = document.getElementById('auth-email').value;
-    const password = document.getElementById('auth-password').value;
-
-    const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
-    if (error) {
-        alert("Sign In Error: " + error.message);
-        return;
-    }
-}
-
-async function handleSignOut() {
-    await supabaseClient.auth.signOut();
-}
-
-supabaseClient.auth.onAuthStateChange((event, session) => {
-    updateAuthUI(session);
-});
-
-function updateAuthUI(session) {
-    const authInputs = document.getElementById('auth-form-inputs');
-    const userInfo = document.getElementById('auth-user-info');
-    const authTitle = document.getElementById('auth-title');
-    const authSubtitle = document.getElementById('auth-subtitle');
-    const carForm = document.querySelector('form');
-
-    if (session) {
-        if (authInputs) authInputs.classList.add('hidden');
-        if (userInfo) userInfo.classList.remove('hidden');
-        if (authTitle) authTitle.innerText = "Welcome, " + session.user.email;
-        if (authSubtitle) authSubtitle.innerText = "You are logged in and ready to list!";
-        if (carForm) {
-            carForm.style.opacity = "1";
-            carForm.style.pointerEvents = "auto";
-        }
-        setTimeout(() => closeAuthModal(), 1500);
-    } else {
-        if (authInputs) authInputs.classList.remove('hidden');
-        if (userInfo) userInfo.classList.add('hidden');
-        if (authTitle) authTitle.innerText = "Account Required";
-        if (authSubtitle) authSubtitle.innerText = "Please sign in or create an account to list your car.";
-        if (carForm) {
-            carForm.style.opacity = "0.3";
-            carForm.style.pointerEvents = "none";
-        }
-    }
-}
-
-// Check session on page load
-supabaseClient.auth.getSession().then(({ data: { session } }) => {
-    updateAuthUI(session);
-});
- <script>
-async function signInWithGoogle() {
-    const { data, error } = await supabaseClient.auth.signInWithOAuth({
-        provider: 'google',
-    });
-    if (error) {
-        alert("Google Sign In Error: " + error.message);
-    }
-}
-
-async function signInWithApple() {
-    const { data, error } = await supabaseClient.auth.signInWithOAuth({
-        provider: 'apple',
-    });
-    if (error) {
-        alert("Apple Sign In Error: " + error.message);
-    }
-}
-</script>
-</script>
-<!-- Sign In / Sign Up Modal -->
-<div id="auth-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-    <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl max-w-xl w-full relative">
-        <!-- Close Button -->
-        <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white font-bold text-xl">✕</button>
-        
-        <h3 id="auth-title" class="text-xl font-bold text-white mb-2">Account Required</h3>
-        <p id="auth-subtitle" class="text-gray-400 text-sm mb-4">Please sign in or create an account to list your car.</p>
-        
-        <div id="auth-form-inputs" class="space-y-3">
-            <input type="email" id="auth-email" placeholder="Email Address" class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white">
-            <input type="password" id="auth-password" placeholder="Password (min 6 characters)" class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white">
-            
-            <div class="flex gap-3 pt-2">
-                <button onclick="handleSignIn()" class="flex-1 bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 rounded-lg transition-colors">
-                    Sign In
-                </button>
-                <button onclick="handleSignUp()" class="flex-1 bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg transition-colors">
-                    Sign Up
-                </button>
-            </div>
-        </div>
-
-        <!-- Shown when user is successfully logged in -->
-        <div id="auth-user-info" class="hidden text-center">
-            <p class="text-green-400 font-semibold mb-3">Logged in successfully! ✅</p>
-            <button onclick="handleSignOut()" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-lg text-sm transition-colors">
-                Sign Out
-            </button>
-        </div>
-    </div>
-</div> 
 </body>
 </html>
