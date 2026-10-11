@@ -198,8 +198,9 @@
                 </div>
 
                 <div>
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Car Image URL</label>
-                    <input type="url" id="car-image" required placeholder="Paste direct image link (e.g. Unsplash URL)" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500 transition-colors">
+                    <!-- Updated to Optional -->
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Car Image URL (Optional)</label>
+                    <input type="url" id="car-image" placeholder="Paste direct image link or leave blank" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500 transition-colors">
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -242,55 +243,8 @@
             const price = document.getElementById('car-price').value;
             const km = document.getElementById('car-km').value;
             const year = document.getElementById('car-year').value;
-            const image = document.getElementById('car-image').value;
             const seller = document.getElementById('car-seller').value;
             const phone = document.getElementById('car-phone').value;
-
-            // 1. Hide Empty State
-            const emptyState = document.getElementById('empty-state');
-            if(emptyState) {
-                emptyState.style.display = 'none';
-            }
-
-            // 2. Add the car card visually to the page
-            const grid = document.getElementById('cars-grid');
-            const card = document.createElement('div');
-            card.className = 'glass-card rounded-2xl overflow-hidden flex flex-col justify-between shadow-xl';
-            card.innerHTML = `
-                <div class="relative h-52 overflow-hidden bg-gray-900">
-                    <img src="${image}" alt="${title}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80'">
-                    <span class="absolute top-3 left-3 px-3 py-1 rounded-lg bg-black/70 backdrop-blur-md text-brand-400 font-bold text-xs border border-white/10">${year}</span>
-                </div>
-                <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-1">${title}</h3>
-                        <div class="text-2xl font-extrabold text-brand-400 mb-3">$${Number(price).toLocaleString()}</div>
-                        <div class="flex items-center gap-4 text-xs text-gray-400 border-t border-gray-800/80 pt-3">
-                            <span><i class="fa-solid fa-gauge text-brand-500 mr-1"></i> ${km}</span>
-                            <span><i class="fa-solid fa-user text-brand-500 mr-1"></i> ${seller}</span>
-                        </div>
-                    </div>
-                </div>
-            `;
             
-            // Insert it at the top of the grid
-            grid.prepend(card);
-
-            // 3. Format message for WhatsApp
-            const message = `Hello Car Listing Lebanon,%0A%0AI want to list my car:%0A🚗 *Model:* ${encodeURIComponent(title)}%0A💵 *Price:* $${encodeURIComponent(price)}%0A⏱️ *Mileage:* ${encodeURIComponent(km)}%0A📅 *Year:* ${encodeURIComponent(year)}%0A🖼️ *Image URL:* ${encodeURIComponent(image)}%0A👤 *Name:* ${encodeURIComponent(seller)}%0A📞 *Phone:* ${encodeURIComponent(phone)}`;
-
-            // Reset form
-            this.reset();
-            
-            // Scroll user back up to see their new card
-            window.location.hash = 'inventory';
-
-            // 4. Open WhatsApp with number +961 71 911 372
-            setTimeout(() => {
-                window.open(`https://wa.me/96171911372?text=${message}`, '_blank');
-            }, 500); // Slight delay so they see the card pop up first
-        });
-    </script>
-
-</body>
-</html>
+            // Handle Optional Image
+            let imageRaw = document.getElementById('car-image').value.trim();
