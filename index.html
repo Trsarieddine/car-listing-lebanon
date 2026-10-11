@@ -1039,5 +1039,14 @@
             renderCars(carsData);
         };
     </script>
+    <!-- Supabase Setup -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = 'https://dwhabztmqaxmxamwzifa.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_0QclRr-HrKmzBcgYjvwvlA_YOFYpxra';
+  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  
+  console.log("Supabase connected!");
+</script>
 </body>
 </html>
