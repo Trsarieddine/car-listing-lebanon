@@ -1044,7 +1044,7 @@
         condition: notes
     };
 
-    const { data, error } = await supabaseClient.from('Cars').insert([...]);
+     const { data, error } = await supabaseClient.from('Cars').insert([newCar]);
 
     if (error) {
         alert('Error submitting vehicle: ' + error.message);
