@@ -1069,6 +1069,48 @@
     const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
     console.log("Supabase connected!");
+async function loadCars() {
+    // 1. Fetch all cars from your database
+    const { data: cars, error } = await supabaseClient.from('Cars').select('*');
+    
+    if (error) {
+        console.error("Error loading cars:", error);
+        return;
+    }
+
+    // 2. Update the "Active Listings" number
+    const countElement = document.getElementById('carCount');
+    if (countElement) countElement.innerText = cars.length;
+
+    // 3. Find the car container (assuming it's named carGrid)
+    const carGrid = document.getElementById('carGrid');
+    if (!carGrid) return; 
+
+    // 4. If no cars, show a message
+    if (cars.length === 0) {
+        carGrid.innerHTML = `<div class="col-span-full text-center py-12 text-gray-400 font-bold">No Vehicles Currently Listed</div>`;
+        return;
+    }
+
+    // 5. Draw the cars on the screen!
+    carGrid.innerHTML = cars.map(car => `
+        <div class="glass-card rounded-2xl overflow-hidden shadow-lg border border-gray-800">
+            <img src="${car.image_upload || 'https://via.placeholder.com/400x250?text=No+Photo'}" alt="${car.make} ${car.model}" class="w-full h-48 object-cover">
+            <div class="p-5">
+                <h4 class="text-xl font-bold text-white">${car.make} ${car.model}</h4>
+                <p class="text-brand-500 font-extrabold text-lg mt-1">$${car.price}</p>
+                <div class="flex flex-wrap gap-2 mt-3 text-xs text-gray-400">
+                    <span class="bg-gray-800 px-2 py-1 rounded">${car.year || 'N/A'}</span>
+                    <span class="bg-gray-800 px-2 py-1 rounded">${car.transmission || 'N/A'}</span>
+                    <span class="bg-gray-800 px-2 py-1 rounded">${car.location || 'Lebanon'}</span>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Tell the website to run this function immediately when the page loads
+loadCars();    
 </script>
 </body>
 </html>
